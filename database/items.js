@@ -38,35 +38,22 @@ function createItems(){
   items.insert(objs)
 }
 
-async function pants(quantity){
-  let p = await items.findOne({CODE: 'PANTS'}).then((items)=>{
-    if (quantity >= 2){
+function calculateItem(quantity, type){
+  return findOneItem(type).then((items) => {
+    if (type === 'PANTS' && quantity >= 2){
       return items.PRICE * (Math.floor(quantity/2) + (quantity %2))
+    }else if(type === 'TSHIRT' && quantity >= 3){
+      return ((items.PRICE * quantity) - ((0.05) * (items.PRICE * quantity)))
     }else{
       return items.PRICE * quantity
     }
   })
-  return p
 }
 
-async function hat(quantity){
-  var h = await items.findOne({CODE: 'HAT'}).then((items)=>{
-      return items.PRICE * quantity
-    })
-  return h
-}
-
-async function tshirt(quantity){
-  let t = items.findOne({CODE: 'TSHIRT'}).then((items)=> {
-    if (quantity >= 3){
-      return ((items.PRICE -1) * quantity)
-    }else {
-      return (items.PRICE * quantity)
-    } 
-  })
-  return t
+function findOneItem(type){
+  return items.findOne({CODE: type})
 }
 
 module.exports = {
- getAll, createItems, pants, tshirt, hat
+ getAll, createItems, calculateItem
 }

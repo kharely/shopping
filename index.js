@@ -17,11 +17,10 @@ app.get('/', function(req, res){
 })
 
 app.post('/', async function(req, res){
-  let total = 0
   let qpants = req.body.pants
   let qtshirt = req.body.tshirt
   let qhat = req.body.hat
-  total = (await items.pants(qpants)) + (await items.tshirt(qtshirt)) + (await items.hat(qhat))
+  let total = (await items.calculateItem(qpants, 'PANTS')) + (await items.calculateItem(qtshirt, 'TSHIRT')) + (await items.calculateItem(qhat, 'HAT'))
   res.json (total)
 })
 
