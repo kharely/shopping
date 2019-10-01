@@ -3,22 +3,8 @@
 ## Download
 `npm install` you will install dependences
 
-### Create a client with vue
-> `vue create client`
-> #### Features
-> - Router
-> - Linter/Formatter
-> #### Linkter and Formatter config
-> - ESLint + Airbnb config
-> #### Pink Additional lint features
-> - Lint to save
-> - Lint and fix on commit
-> #### Where the placing of config for Babel, etc...
-> - Package.json
-> #### Save this as a preset fot futures projects
-> - N
-> ### When this is finished run
-> `cd client & npm run serve`
+### Frontend repository
+--
 
 ### Mongo installation on ubuntu
 `wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -`
