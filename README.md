@@ -1,8 +1,7 @@
 # shopping
 
 ## Download
-`npm install express morgan cors body-parser monk @vue/cli`
-You have to install nodejs.
+`npm install` you will install dependences
 
 ### Create a client with vue
 > `vue create client`
