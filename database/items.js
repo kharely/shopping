@@ -1,18 +1,8 @@
 const db = require('./connection')
 const items = db.get('items')
-const objs = require('./shopping_list')
 
 function getAll(){
- let map1 = new Map()
- let a = items.find()
-  if (!map1.has(a)){
-    createItems()
-  }
-  return a
-}
-
-function createItems(){
-  items.insert(objs.options())
+  return items.find()
 }
 
 function calculateItem(quantity, type){
@@ -32,5 +22,5 @@ function findOneItem(type){
 }
 
 module.exports = {
- getAll, createItems, calculateItem
+ getAll, calculateItem
 }

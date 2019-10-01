@@ -41,4 +41,4 @@ Start Mongo server or stop
 
 `sudo service mongod start` or `sudo service mongod stop`
 
-#### For insert data, run a 'get' method.
+#### For insert data, run `node create_items.js`

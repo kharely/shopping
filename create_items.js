@@ -1,3 +1,6 @@
+const db = require('./database/connection')
+const items = db.get('items')
+
 function options(){
 return [
   {
@@ -21,6 +24,10 @@ return [
 ]
 }
 
-module.exports= {
-  options
+function createItems(){
+  items.insert(options()).then(()=>{
+    console.log('done')
+  })
 }
+
+createItems()
