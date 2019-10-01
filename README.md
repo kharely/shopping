@@ -41,4 +41,4 @@ Start Mongo server or stop
 
 `sudo service mongod start` or `sudo service mongod stop`
 
-#### For insert data, run a 'get' method.
+#### For insert data to database, run `node index.js` then obtain 'get' method on localhost:3000.
