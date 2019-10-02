@@ -19,11 +19,11 @@ app.get('/', function(req, res){
 })
 
 app.post('/', async function(req, res){
-  let qpants = req.body.pants
-  let qtshirt = req.body.tshirt
-  let qhat = req.body.hat
-  let total = (await items.calculateItem(qpants, 'PANTS')) + (await items.calculateItem(qtshirt, 'TSHIRT')) + (await items.calculateItem(qhat, 'HAT'))
-  res.json (total)
+  let pants = await items.calculateItem(req.body.pants, 'PANTS')
+  let tshirt = await items.calculateItem(req.body.tshirt, 'TSHIRT')
+  let hat = await items.calculateItem(req.body.hat, 'HAT')
+  let total = pants + tshirt + hat
+  res.json({'total':total, 'pants':pants, 'tshirt':tshirt, 'hat':hat})
 })
 
 app.listen(port)
