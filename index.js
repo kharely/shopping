@@ -9,6 +9,8 @@ const app = express()
 const items = require('./database/items')
 
 app.use(bodyParser.json());
+app.use(cors())
+app.use(morgan('tiny'))
 
 app.get('/', function(req, res){
   items.getAll().then((items)=>{
