@@ -4,7 +4,7 @@
 `npm install` you will install dependences
 
 ### Frontend repository
---
+https://github.com/kharely/shopping-frontend
 
 ### Mongo installation on ubuntu
 `wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -`
